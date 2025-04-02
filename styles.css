@@ -1,0 +1,65 @@
+/* CSS by ///ADD/// YOUR NAME */
+
+/* Imported Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* ///ADD/// CSS Reset */
+
+
+/* Root Variables */
+:root {
+  --blue-bulletin: #1D3557;
+  --news-flash: #E63946;
+  --watchdog-white: #F1FAEE;
+  --truth-text: #333;
+  --story-subtitle: #457B9D;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-heading: 'Merriweather', serif;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  --transition: all 0.5s ease;
+}
+
+/* Manual Light/Dark Mode Styles*/
+body.light-mode {
+  background-color: var(--watchdog-white);
+  color: var(--truth-text);
+}
+body.dark-mode {
+  background-color: var(--truth-text);
+  color: var(--watchdog-white);
+}
+#theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--watchdog-white);
+  border: 1px solid var(--blue-bulletin);
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+/* ///ADD/// Skip Link Styles */
+
+/* ///ADD/// Navigation Styles */
+
+/* ///ADD/// Global Layout Styles */
+
+/* ///ADD/// Global Text Styles */
+
+
+/* ///ADD/// medium styles 620px */
+
+
+/* ///ADD/// large styles 920px */
+
+
+/* ///ADD/// x-large styles 1024px */
+
+
+/* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+
+
+/* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
+@supports (selector(:has(*))) {
+
+}
