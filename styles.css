@@ -86,7 +86,7 @@ body.dark-mode {
 }
 
 /* ///ADD/// Skip Link Styles */
-.sr-only{
+.skip-link {
   position: absolute;
 	left: -10000px;
 	top: auto;
@@ -94,10 +94,108 @@ body.dark-mode {
 	height: 1px;
 	overflow: hidden;
 }
+.skip-link:focus{
+  transform: translateY(0%);
+}
 
 /* ///ADD/// Navigation Styles */
+.mobile-nav {
+  position: relative;
+}
+nav h2 {
+  display: none;
+}
+
+/* Menu button */
+.menu-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--news-flash);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  z-index: 10000;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.menu-button:hover,
+.mobile-nav .menu li a:hover {
+  background-color: var(--blue-bulletin);
+  border: 2px solid var(--news-flash);
+}
+
+/* Dropdown Menu */
+.mobile-nav .menu {
+  max-height: 0;
+  overflow: hidden;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+#menu-toggle:checked + .menu-button + .menu {
+  max-height: 300px;
+}
+.mobile-nav .menu li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--news-flash);
+  text-align: center;
+  font-weight: bold;
+}
 
 /* ///ADD/// Global Layout Styles */
+body{
+  height: 100vh;
+  font-family: var(--font-body);
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+header, footer {
+  background-color: var(--blue-bulletin);
+}
+.header-content, .social {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  margin 1rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+article{
+  padding: 1rem;
+  color: white;
+  margin: 0 0.25rem;
+  transition: transform 0.3s ease
+}
+article:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
 /* ///ADD/// Global Text Styles */
 
