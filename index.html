@@ -11,49 +11,54 @@
 	<!-- For Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Civic Lens">
-	<meta name="twitter:description" content="">
+	<meta name="twitter:description" content="Independent journalism focused on facts, justice, and marginalized voices.">
 	<meta name="twitter:image" content="">
   <meta name="twitter:creator" content="@CivicLens">
   <meta name="twitter:site" content="@CivicLens">
 
 	<!-- Open Graph -->	
 	<meta property="og:title" content="Civic Lens">
-	<meta property="og:description" content="website">
+	<meta property="og:description" content="Independent journalism focused on facts, justice, and marginalized voices.">
 	<meta property="og:image" content="http://example.com/image.jpg">
 	<meta property="og:url" content="https://www.civiclens.com">
 	<meta property="og:type" content="website">
 
 <link rel="stylesheet" href="styles.css">
-
-  <title>Civic Lens</title>
+<title>Civic Lens</title>
 </head>
-<body>
 
-  <header>
+<body>
+  <!-- skip link -->
     <a href="#main" class="skip-link">Skip to main content</a>
 
+  <!-- LIGHT MODE DARK BUTTON -->
     <button id="theme-toggle" aria-label="Toggle light/dark mode">
       <svg width="35px" height="35px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs><clipPath id="a"><path d="m18.512 18.512h62.977v62.977h-62.977z"/></clipPath></defs>
         <g clip-path="url(#a)"><path d="m65.098 68.164c-9.2812 7.7266-23.09 7.2422-31.797-1.4648-8.707-8.7031-9.1953-22.516-1.4648-31.793 0.74609-0.89844 2.1016-0.96875 2.9258-0.14453l30.473 30.477c0.82422 0.82422 0.75391 2.1797-0.13672 2.9258m7.168-40.43c-12.297-12.297-32.234-12.297-44.531 0-12.297 12.301-12.297 32.234 0 44.531s32.234 12.297 44.531 0 12.297-32.23 0-44.531" fill="#333" fill-rule="evenodd"/></g>
       </svg>
     </button>
-    
+
+<header>
+  <div class="header-container">
     <h1>Civic Lens</h1>
     <p class="tagline">See Clearly. Know Deeply. Act Justly.</p>
-  </header>
-
-  <nav class="mobile-nav" aria-label="Mobile Navigation">
-    <h2>Main Navigation</h2>
-    <input type="checkbox" id="menu-toggle" hidden>
-    <label for="menu-toggle" class="menu-button">Menu</label>
-    <ul class="menu">
-      <li><a href="#breakingNews">Breaking News</a></li>
-      <li><a href="#featured">Featured Articles</a></li>
-      <li><a href="#alerts">Alerts</a></li>
-      <li><a href="#social">Social</a></li>
-    </ul>
-  </nav>
+  
+  
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+      <h2>Main Navigation</h2>
+      <input type="checkbox" id="menu-toggle" hidden>
+      <label for="menu-toggle" class="menu-button">Menu</label>
+      <ul class="menu">
+        <li><a href="#breakingNews">Breaking News</a></li>
+        <li><a href="#featured">Featured Articles</a></li>
+        <li><a href="#alerts">Alerts</a></li>
+        <li><a href="#social">Social</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+</header>
 
   <main id="main">    
     <section id="welcome">
@@ -64,120 +69,146 @@
 
     <section id="breakingNews">
       <h2>Breaking News</h2>
-      <article>
-        <h3>Federal Investigation Launched into Water Mismanagement in the Southwest</h3>
-        <p>The Department of Justice has announced a full investigation into decades of water distribution practices affecting tribal lands and rural communities.</p>
-        videos/water-management.mp4
-      </article>
-
-      <article>
-        <h3>Voter Suppression Bill Faces Pushback in State Supreme Court</h3>
-        <p>Civil rights advocates argue that the bill disenfranchises thousands of voters and potential voters of color and those in rural areas of the country.</p>
-        videos/voter-suppression.mp4
-      </article>
+      <div class="breakingNews-container">
+        <article>
+          <h3>Federal Investigation Launched into Water Mismanagement in the Southwest</h3>
+          <p>The Department of Justice has announced a full investigation into decades of water distribution practices affecting tribal lands and rural communities.</p>
+          <video controls>
+            <source src="videos/water-management.mp4">
+          </video>
+        </article>
+  
+        <article>
+          <h3>Voter Suppression Bill Faces Pushback in State Supreme Court</h3>
+          <p>Civil rights advocates argue that the bill disenfranchises thousands of voters and potential voters of color and those in rural areas of the country.</p>
+          <video controls>
+            <source src="videos/voter-suppression.mp4">
+          </video>
+        </article>
+      </div>
     </section>
 
     <section id="featured">
       <h2>Featured Articles</h2>
+      <div class="featured-container">
+        <article>
+          <h3>The Cost of Silence: Whistleblower Stories from Inside Tech Giants</h3>
+          <p>Former employees speak out about ethical breaches in data privacy and surveillance.</p>
+        </article>
         
-      <article>
-        <h3>The Cost of Silence: Whistleblower Stories from Inside Tech Giants</h3>
-        <p>Former employees speak out about ethical breaches in data privacy and surveillance.</p>
-      </article>
-      
-      <article>
-        <h3>Unequal Justice: How Bail Systems Harm the Poor</h3>
-        <p>An investigative series on cash bail and its disproportionate impact.</p>
-      </article>
-      
-      <article>
-        <h3>Invisible Work: The Lives of Migrant Caregivers</h3>
-        <p>Humanizing the labor that keeps households and economies afloat.</p>
-      </article>
-      
-      <article>
-        <h3>Redlined Still: A New Map of Modern-Day Housing Discrimination</h3>
-        <p>Data visualization showing systemic inequality in real estate today.</p>
-      </article>
-      
-      <article>
-        <h3>Climate Injustice: Who Pays for Pollution?</h3>
-        <p>Communities of color bear the brunt of environmental damage.</p>
-      </article>
-
-      <article>
-        <h3>Teaching Under Fire: The Fight for Inclusive Education</h3>
-        <p>Teachers navigate book bans, curriculum restrictions, and culture wars.</p>
-      </article>
-      
-      <article>
-        <h3>Food Deserts and Corporate Abandonment</h3>
-        <p>Why access to nutrition is a zip code lottery.</p>
-      </article>
-      
-      <article>
-        <h3>Policing Mental Health: A Broken Response System</h3>
-        <p>Examining police interactions with those in crisis.</p>
-      </article>
-      
-      <article>
-        <h3>The Disinformation Economy</h3>
-        <p>Tracing profit motives behind fake news empires.</p>
-      </article>
-      
-      <article>
-        <h3>Facing the Algorithm: AI and Racial Bias</h3>
-        <p>The coded inequalities that shape our lives.</p>
-      </article>
-      
-      <article>
-        <h3>The Voting Maze</h3>
-        <p>A guide to understanding your rights amid changing laws.</p>
-      </article>
-      
-      <article>
-        <h3>After the Cameras Leave: Long-Term Crisis Recovery</h3>
-        <p>Rebuilding trust and infrastructure in disaster-hit communities.</p>
-      </article>
+        <article>
+          <h3>Unequal Justice: How Bail Systems Harm the Poor</h3>
+          <p>An investigative series on cash bail and its disproportionate impact.</p>
+        </article>
+        
+        <article>
+          <h3>Invisible Work: The Lives of Migrant Caregivers</h3>
+          <p>Humanizing the labor that keeps households and economies afloat.</p>
+        </article>
+        
+        <article>
+          <h3>Redlined Still: A New Map of Modern-Day Housing Discrimination</h3>
+          <p>Data visualization showing systemic inequality in real estate today.</p>
+        </article>
+        
+        <article>
+          <h3>Climate Injustice: Who Pays for Pollution?</h3>
+          <p>Communities of color bear the brunt of environmental damage.</p>
+        </article>
+  
+        <article>
+          <h3>Teaching Under Fire: The Fight for Inclusive Education</h3>
+          <p>Teachers navigate book bans, curriculum restrictions, and culture wars.</p>
+        </article>
+        
+        <article>
+          <h3>Food Deserts and Corporate Abandonment</h3>
+          <p>Why access to nutrition is a zip code lottery.</p>
+        </article>
+        
+        <article>
+          <h3>Policing Mental Health: A Broken Response System</h3>
+          <p>Examining police interactions with those in crisis.</p>
+        </article>
+        
+        <article>
+          <h3>The Disinformation Economy</h3>
+          <p>Tracing profit motives behind fake news empires.</p>
+        </article>
+        
+        <article>
+          <h3>Facing the Algorithm: AI and Racial Bias</h3>
+          <p>The coded inequalities that shape our lives.</p>
+        </article>
+        
+        <article>
+          <h3>The Voting Maze</h3>
+          <p>A guide to understanding your rights amid changing laws.</p>
+        </article>
+        
+        <article>
+          <h3>After the Cameras Leave: Long-Term Crisis Recovery</h3>
+          <p>Rebuilding trust and infrastructure in disaster-hit communities.</p>
+        </article>
+      </div>
     </section>
 
     <section id="alerts">  
       <h2>Stay Informed. Stay Empowered.</h2>
         <p>Receive text messages with the news you want to know.</p>
         <form action="https://wp.zybooks.com/form-viewer.php" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
 
-          <label for="mobile">Mobile</label>
-          <input type="tel" id="mobile" name="mobile" required autocomplete="tel">
+          <div class="form-group-grid">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="mobile">Mobile</label>
+              <input type="tel" id="mobile" name="mobile" required autocomplete="tel">
+            </div>
+          </div>
 
           <fieldset>
             <legend>Notification Preferences</legend>
           
-          
-            <input type="checkbox" id="news">
-            <label for="news">Breaking News</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="news" name="notifications[]" value="news">
+              <label for="news">Breaking News</label>
+            </div>
 
-            <input type="checkbox" id="politics">
-            <label for="politics">Politics</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="politics"  name="notifications[]" value="politics">
+              <label for="politics">Politics</label>
+            </div>
 
-            <input type="checkbox" id="weather">
-            <label  for="weather">Weather</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="weather" name="notifications[]" value="weather">
+              <label  for="weather">Weather</label>
+            </div>
 
-            <input type="checkbox" id="sports">
-            <label for="sports">Sports</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="sports" name="notifications[]" value="sports">
+              <label for="sports">Sports</label>
+            </div>
 
-            <input type="checkbox" id="entertainment">
-            <label for="entertainment">Entertainment</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="entertainment" name="notifications[]" value="entertainment">
+              <label for="entertainment">Entertainment</label>
+            </div>
 
-            <input type="checkbox" id="world">
-            <label for="world">World</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="world" name="notifications[]" value="world">
+              <label for="world">World</label>
+            </div>
 
-            <input type="checkbox" id="financial">
-            <label for="financial">Financial</label>
+            <div class="checkbox-group">
+              <input type="checkbox" id="financial" name="notifications[]" value="financial">
+              <label for="financial">Financial</label>
+            </div>
           </fieldset>
           
-          <input type="submit" value="Subscribe">
+          <input type="submit" value="SUBSCRIBE">
         </form>
         
     </section>
@@ -187,14 +218,14 @@
     <section id="social">
       <h2>Follow Us</h2>
         <ul>
-          <li><a href="">Twitter/X</a></li>
-          <li><a href="">Instagram</a></li>
-          <li><a href="">YouTube</a></li>
-          <li><a href="">TikTok</a></li>
-          <li><a href="">LinkedIn</a></li>
+          <li>Twitter/X</li>
+          <li>Instagram</li>
+          <li>YouTube</li>
+          <li>TikTok</li>
+          <li>LinkedIn</li>
         </ul>
     </section>  
-    <p>&copy; 2025 Civic Lens. All rights reserved.</p>
+    <small>&copy; 2025 Civic Lens. All rights reserved.</small>
   </footer>  
 
   <script>

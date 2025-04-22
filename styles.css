@@ -66,6 +66,11 @@ table {
   --transition: all 0.5s ease;
 }
 
+/* Make boxes not overflow */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Manual Light/Dark Mode Styles*/
 body.light-mode {
   background-color: var(--watchdog-white);
@@ -75,6 +80,7 @@ body.dark-mode {
   background-color: var(--truth-text);
   color: var(--watchdog-white);
 }
+
 #theme-toggle {
   position: absolute;
   top: 1rem;
@@ -85,17 +91,40 @@ body.dark-mode {
   cursor: pointer;
 }
 
+body.light-mode header, body.light-mode footer {
+  color: var(--watchdog-white);
+}
+body.light-mode #featured article h3, body.light-mode #featured article p {
+  color: var(--truth-text);
+}
+
+
 /* ///ADD/// Skip Link Styles */
 .skip-link {
+  background: var(--news-flash);
+  top: 0;
+  left: 50%;
+  padding: 8px;
   position: absolute;
-	left: -10000px;
-	top: auto;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
+  transform: translateY(-1000%);
+  transition: var(--transition)
 }
 .skip-link:focus{
   transform: translateY(0%);
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 /* ///ADD/// Navigation Styles */
@@ -121,23 +150,25 @@ nav h2 {
   width: 100%;
   text-align: center;
   margin-bottom: 0.25rem;
+  border: 2px solid var(--news-flash);
+  box-sizing: border-box;
 }
 
 .menu-button:hover,
 .mobile-nav .menu li a:hover {
   background-color: var(--blue-bulletin);
-  border: 2px solid var(--news-flash);
+  transition: var(--transition);
 }
 
 /* Dropdown Menu */
 .mobile-nav .menu {
   max-height: 0;
   overflow: hidden;
-
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: auto;
   z-index: 1;
   border-radius: 0 0 0.5rem 0.5rem;
 }
@@ -149,7 +180,7 @@ nav h2 {
   padding: 0.75rem 1rem;
   color: white;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--truth-text);
   background-color: var(--news-flash);
   text-align: center;
   font-weight: bold;
@@ -169,8 +200,10 @@ main {
 
 header, footer {
   background-color: var(--blue-bulletin);
+  padding: 1rem;
+  margin: 0 auto;
 }
-.header-content, .social {
+.header-container, #social {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
@@ -179,42 +212,304 @@ header, footer {
 h1, h2, h3 {
   font-family: var(--font-heading);
   font-weight: normal;
-  margin 1rem 0;
+  margin: 1rem 0;
 }
 
 ul {
   list-style: none;
 }
 
+section{
+  margin: 2rem 0;
+}
+
 article{
   padding: 1rem;
-  color: white;
-  margin: 0 0.25rem;
-  transition: transform 0.3s ease
+  color: var(--watchdog-white);
+  margin: 0.25rem .5rem;
 }
 article:hover{
   transform: scale(1.05);
   cursor: pointer;
+  transition: var(--transition);
 }
 
-/* ///ADD/// Global Text Styles */
+video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
 
+/* Welcome Section */
+#welcome .tagline {
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
+/* Breaking News Section */
+.breakingNews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.breakingNews-container article {
+  border: 2px solid black;
+  box-shadow: var(--shadow);
+  background-color: var(--news-flash);
+}
+.breakingNews-container article h3 {
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid white;
+}
+
+/* Featured Articles */
+#featured {
+  display: grid;
+  gap: 0.5rem;
+}
+#featured article {
+  border: 2px solid var(--story-subtitle);
+  box-shadow: var(--shadow);
+}
+#featured article h3 {
+  border-bottom: 2px solid var(--story-subtitle);
+}
+
+/* alerts section */
+#alerts h2 {
+  font-size: 1.4rem;
+}
+#alerts p {
+  font-size: .8rem;
+  margin: 1rem 0;
+}
+
+/* Form Stuff */
+form {
+  background-color: var(--news-flash);
+  padding: 1rem;
+  color: var(--watchdog-white);
+  box-shadow: var(--shadow);
+  margin: 0 0.25rem;
+  border-radius: 2px;
+}
+form input[type="text"],
+form input[type="tel"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.25rem 0;
+  border-radius: 0.25rem;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: var(--watchdog-white);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+fieldset {
+  accent-color: var(--blue-bulletin);
+  border: 2px solid var(--blue-bulletin);
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+form input[type="checkbox"] {
+  height: 25px;
+  width: 25px;
+}
+.checkbox-group {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+}
+form input[type="submit"] {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--watchdog-white);
+  background-color: var(--blue-bulletin);
+  text-align: center;
+  width: 100%;
+  margin: 1rem 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+form input[type="submit"]:hover {
+  background-color: var(--watchdog-white);
+  color: var(--blue-bulletin);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* FOOTER */
+footer {
+  padding-top: 1.25rem;
+}
+footer ul{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+}
+footer li {
+  display: block;
+  padding: .75rem 1rem;
+  color: var(--watchdog-white);
+  border: 1px solid var(--news-flash);
+  background-color: var(--news-flash);
+  text-align: center;
+  font-weight: bold;
+  width: fit-content;
+}
+footer li:hover {
+  background-color: var(--blue-bulletin);
+  cursor: pointer;
+  transition: var(--transition);
+}
+small {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+}
 
 /* ///ADD/// medium styles 620px */
+@media screen and (min-width: 620px) {
+  /* Show full nav menu */
+  .mobile-nav .menu {
+    position: static;
+    max-height: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: transparent;
+  }
 
+  .mobile-nav .menu li a {
+    background-color: var(--news-flash);
+    border: 2px solid var(--news-flash);
+    color: white;
+    margin: 1rem 0;
+  }
+
+  /* hide the menu button */
+  .menu-button,
+  #menu-toggle {
+    display: none;
+  }
+
+  .breakingNews-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .breakingNews-container article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .breakingNews-container article video {
+    margin-top: auto;
+  }
+
+  .featured-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-group-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .form-group {
+    flex: 1;
+    width: 50%;
+  }
+
+  fieldset {
+    max-height: 275px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  footer ul {
+    justify-content: initial;
+    gap: 1.5rem;
+  }
+}
 
 /* ///ADD/// large styles 920px */
+@media screen and (min-width: 920px) {
+  .featured-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
+  input{
+    grid-column: 1 / -1;
+  }
+  fieldset {
+    max-height: 200px;
+  }
+}
 
 /* ///ADD/// x-large styles 1024px */
-
+  /* add a bit of extra gap */
+@media screen and (min-width: 1024px) {
+  .featured-container {
+    gap: .2rem 1.5rem;
+  }
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: light) {
+  body{
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+  .featured-container article h3, .featured-container article p{
+    color: var(--truth-text);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body{
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+  .featured-container article h3, .featured-container article p{
+    color: var(--watchdog-white);
+  }
+}  
+@media (prefers-reduced-motion: reduce) {
+  article:hover {
+    transform: none;
+  }
+  .skip-link {
+    transition: none;
+  }
+}
+
+
 
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
-  #menu-toggle:checked ~ .menu {
-    display: block;
+@supports selector(:has(*)) {
+  .mobile-nav:has(#menu-toggle:checked) .menu-button {
+    background-color: var(--blue-bulletin);
+    border: 2px;
+  }
+  .mobile-nav:has(#menu-toggle:checked) .menu {
+    max-height: 300px;
+    box-shadow: var(--shadow);
+  }
+  #menu-toggle:checked + .menu-button + .menu {
+    max-height: initial;
   }
 }
